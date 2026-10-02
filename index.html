@@ -27,25 +27,72 @@
 <h2 style="font-family: 'Arial', sans-serif; color: #ffffff; font-size: 18px; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Programas, Comandos de CMD e muito mais aqui no nosso site!</h2>
 
 
-<div style="text-align: center; margin: 20px 0;">
-        <details style="display: inline-block; background: rgba(0, 0, 0, 0.6); padding: 12px 25px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">
-            <summary style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; color: #ffffff; cursor: pointer; font-weight: 600; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); list-style: none;">
-                &#9662; Abrir Menu de Navegação
-            </summary>
-            
-            <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px; align-items: center;">
-                <p style="margin: 0;">
-                    <a href="Programas.html" rel="next"><button style="background: #222; color: #fff; border: 1px solid #555; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;">&#x1F449; Programas para PC</button></a>
-                </p>
-                <p style="margin: 0;">
-                    <a href="Jogos.html" rel="next"><button style="background: #222; color: #fff; border: 1px solid #555; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;">&#x1F449; Jogos</button></a>
-                </p>
-                <p style="margin: 0;">
-                    <a href="Comandos.html" rel="next"><button style="background: #222; color: #fff; border: 1px solid #555; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;">&#x1F449; Comandos de CMD</button></a>
-                </p>
-            </div>
-        </details>
+<!-- Botão Moderno para Abrir o Menu -->
+<div style="text-align: center; margin: 25px 0;">
+    <button onclick="toggleMenu()" style="background: rgba(255, 0, 0, 0.726); color: #ffffff; border: 1px solid rgba(255, 0, 0, 0.4); padding: 12px 24px; border-radius: 30px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgb(255, 0, 0);" onmouseover="this.style.background='rgba(88, 101, 242, 0.3)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(88, 101, 242, 0.15)'; this.style.transform='translateY(0)';">
+         Abrir Menu de Navegação
+    </button>
+</div>
+
+<!-- Menu Lateral (Gaveta) Limpo -->
+<div id="sideMenu" style="position: fixed; top: 0; right: -300px; width: 280px; height: 100%; background: rgba(0, 0, 0, 0.836); backdrop-filter: blur(12px); border-left: 1px solid rgba(95, 95, 95, 0.3); z-index: 1000; transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1); padding: 40px 20px; box-shadow: -10px 0 30px rgba(0,0,0,0.8);">
+    
+    <!-- Botão de Fechar (X) -->
+    <button onclick="toggleMenu()" style="background: none; border: none; color: #ffffff; font-size: 24px; cursor: pointer; position: absolute; top: 20px; right: 20px;">&times;</button>
+    
+    <h3 style="color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">Navegação</h3>
+    
+    <!-- Links Principais -->
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+        <a href="index.html" style="color: #cbd5e1; text-decoration: none; font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; padding: 10px; border-radius: 8px; transition: 0.2s;" onmouseover="this.style.background='rgba(88, 101, 242, 0.2)'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#cbd5e1';">🏠 Início</a>
+        <a href="#galeria" style="color: #cbd5e1; text-decoration: none; font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; padding: 10px; border-radius: 8px; transition: 0.2s;" onmouseover="this.style.background='rgba(88, 101, 242, 0.2)'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#cbd5e1';">🖼️ Galeria</a>
+        <a href="#comunidade" style="color: #cbd5e1; text-decoration: none; font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; padding: 10px; border-radius: 8px; transition: 0.2s;" onmouseover="this.style.background='rgba(88, 101, 242, 0.2)'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#cbd5e1';">💬 Comunidade</a>
+        <a href="jogos.html" style="color: #cbd5e1; text-decoration: none; font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; padding: 10px; border-radius: 8px; transition: 0.2s;" onmouseover="this.style.background='rgba(88, 101, 242, 0.2)'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#cbd5e1';">🎮 Jogos</a>
+        <a href="comandos.html" style="color: #cbd5e1; text-decoration: none; font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; padding: 10px; border-radius: 8px; transition: 0.2s;" onmouseover="this.style.background='rgba(88, 101, 242, 0.2)'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#cbd5e1';">📜 Comandos</a>
+        <a href="programas.html" style="color: #cbd5e1; text-decoration: none; font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; padding: 10px; border-radius: 8px; transition: 0.2s;" onmouseover="this.style.background='rgba(88, 101, 242, 0.2)'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#cbd5e1';">💻 Programas</a>
     </div>
+</div>
+
+<!-- Script de Controle do Menu -->
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('sideMenu');
+        if (menu.style.right === '0px') {
+            menu.style.right = '-300px';
+        } else {
+            menu.style.right = '0px';
+        }
+    }
+</script>
+
+
+
+
+
+
+<!-- Script de Controle do Menu -->
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('sideMenu');
+        if (menu.style.right === '0px') {
+            menu.style.right = '-300px';
+        } else {
+            menu.style.right = '0px';
+        }
+    }
+</script>
+
+<!-- Script para Abrir/Fechar o Menu -->
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('sideMenu');
+        if (menu.style.right === '0px') {
+            menu.style.right = '-300px';
+        } else {
+            menu.style.right = '0px';
+        }
+    }
+</script>
 
 </ul>
 <picture> 
@@ -58,20 +105,90 @@
         }
     </style>
 </picture>
-<div style="display: flex; gap: 15px; justify-content: center; margin: 20px 0; flex-wrap: wrap;">
-        <img src="caça1.jpg" alt="Caça 1 - The Hunter" style="width: 48%; min-width: 280px; height: 200px; object-fit: cover; border-radius: 6px; border: 2px solid #ffffff;">
-        <img src="caça2amigos.jpg" alt="Caça com amigos - The Hunter" style="width: 48%; min-width: 280px; height: 200px; object-fit: cover; border-radius: 6px; border: 2px solid #fcfbfb;">
-    </div>
 
 
-    <div style="text-align: center; margin: 25px 0;">
-        <ul style="list-style: none; padding: 0; margin: 0; display: inline-block;">
-            <li style="font-size: 19px;">
-                <img src="discord.ico" alt="Ícone Discord" width="26" height="26" style="vertical-align: middle; margin-top: -3px; margin-right: 8px;">
-                <a href="https://discord.gg/haY/AHCBgf" target="_blank" title="Clique para entrar no nosso servidor oficial do Discord!" style="color: #ffffff; text-decoration: none; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500; letter-spacing: 0.5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Servidor no Discord</a>
-            </li>
-        </ul>
-    </div>
+
+
+
+<!-- Galeria de Imagens Limpa e Proporcional -->
+<div style="display: flex; gap: 20px; justify-content: center; margin: 25px auto; max-width: 1000px; flex-wrap: wrap; padding: 0 15px;">
+    
+    <!-- IMAGEM 1 -->
+    <button onclick="document.getElementById('modal-img1').showModal()" style="background: none; border: none; padding: 0; cursor: pointer; flex: 1; min-width: 280px; max-width: 480px; overflow: hidden; border-radius: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="caça1.jpg" alt="Caça 1 - The Hunter" style="width: 100%; height: 220px; object-fit: cover; border: 2px solid #ffffff; display: block; border-radius: 8px;">
+    </button>
+
+    <!-- MODAL 1 -->
+    <dialog id="modal-img1" style="border: none; border-radius: 12px; padding: 0; max-width: 90vw; max-height: 90vh; box-shadow: 0 0 50px rgba(0,0,0,0.9); background: transparent; overflow: hidden;">
+        <form method="dialog">
+            <button style="position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.7); color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10;">&times;</button>
+        </form>
+        <img src="caça1.jpg" alt="Caça 1 - The Hunter (Ampliada)" style="max-width: 100%; max-height: 90vh; object-fit: contain; display: block; border-radius: 12px;">
+        <style>
+            #modal-img1::backdrop { background: rgba(0, 0, 0, 0.85); }
+        </style>
+    </dialog>
+
+
+    <!-- IMAGEM 2 -->
+    <button onclick="document.getElementById('modal-img2').showModal()" style="background: none; border: none; padding: 0; cursor: pointer; flex: 1; min-width: 280px; max-width: 480px; overflow: hidden; border-radius: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="caça2amigos.jpg" alt="Caça com amigos - The Hunter" style="width: 100%; height: 220px; object-fit: cover; border: 2px solid #fcfbfb; display: block; border-radius: 8px;">
+    </button>
+
+    <!-- MODAL 2 -->
+    <dialog id="modal-img2" style="border: none; border-radius: 12px; padding: 0; max-width: 90vw; max-height: 90vh; box-shadow: 0 0 50px rgba(0,0,0,0.9); background: transparent; overflow: hidden;">
+        <form method="dialog">
+            <button style="position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.7); color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10;">&times;</button>
+        </form>
+        <img src="caça2amigos.jpg" alt="Caça com amigos (Ampliada)" style="max-width: 100%; max-height: 90vh; object-fit: contain; display: block; border-radius: 12px;">
+        <style>
+            #modal-img2::backdrop { background: rgba(0, 0, 0, 0.85); }
+        </style>
+    </dialog>
+
+</div>
+
+
+<!-- Widget Oficial do Servidor do Discord (Compacto) -->
+<div style="background: rgba(34, 34, 34, 0.9); padding: 12px; border-radius: 12px; max-width: 300px; margin: 20px auto; border: 1px solid rgba(10, 10, 10, 0.3); text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.623);">
+    <iframe src="https://discord.com/widget?id=1194442490099552356&theme=dark" width="270" height="250" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" style="border-radius: 8px; background: transparent;"></iframe>
+</div>
+
+</div>
+</div>
+
+    <!-- Botão Compacto do Discord com Efeito de Hover -->
+<div style="text-align: center; margin: 20px 0;">
+    <a href="https://discord.gg/hAY/AhCBgf" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(0, 21, 255, 0.603); padding: 12px 24px; border-radius: 30px; border: 1px solid rgba(0, 21, 255, 0.5); text-decoration: none; color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500; font-size: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(88, 101, 242, 0.4)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(88, 101, 242, 0.4)';" onmouseout="this.style.background='rgba(88, 101, 242, 0.2)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.3)';">
+        <img src="discord.ico" alt="Ícone Discord" width="22" height="22">
+        <span>Servidor no Discord</span>
+    </a>
+</div>
+
+<!-- Mural de Recados da Comunidade -->
+<div style="background: rgba(32, 34, 37, 0.9); padding: 20px; border-radius: 12px; max-width: 600px; margin: 30px auto; border: 1px solid rgba(88, 101, 242, 0.3); box-shadow: 0 4px 15px rgb(76, 63, 255);">
+    <h3 style="color: #ffffff; text-align: center; font-family: 'Segoe UI', Arial, sans-serif; margin-bottom: 15px;">Mural de Recados da Comunidade</h3>
+    
+    <!-- O script abaixo cria a caixinha de comentários integrada -->
+    <script src="https://utteranc.es/utterances.js"
+        repo="SEU_USUARIO_DO_GITHUB/NOME_DO_REPOSITORIO"
+        issue-term="pathname"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
     <footer style="text-align: center; margin: 30px 0 20px 0; padding: 15px; font-family: Arial, sans-serif; color: #cccccc; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.2);">
@@ -79,6 +196,9 @@
             Desenvolvido por <span style="color: #ff3333; font-weight: bold; font-family: 'Arial Black', Impact, sans-serif;">Kuntz</span> &bull; Gamer Community &copy; 2026
         </p>
     </footer>
+
+    
+</div>
 
 </body>
 
